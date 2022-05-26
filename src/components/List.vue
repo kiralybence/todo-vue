@@ -7,6 +7,7 @@
             <ListItem
                 v-for="task in tasks"
                 :task="task"
+                @toggle-complete="toggleTask"
                 @remove="removeTask"
             />
         </ul>
@@ -18,7 +19,7 @@ import ListItem from './ListItem.vue';
 
 export default {
     components: {
-        ListItem
+        ListItem,
     },
     data() {
         return {
@@ -35,6 +36,15 @@ export default {
             });
 
             this.newTask = '';
+        },
+        toggleTask(id) {
+            this.tasks = this.tasks.map(task => {
+                if (task.id === id) {
+                    task.completed = !task.completed;
+                }
+
+                return task;
+            });
         },
         removeTask(id) {
             this.tasks = this.tasks.filter(task => task.id !== id);
