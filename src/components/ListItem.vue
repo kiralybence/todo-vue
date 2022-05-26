@@ -1,6 +1,8 @@
 <template>
     <li>
-        {{ task }}
+        {{ task.description }}
+
+        <button @click="remove">Remove</button>
     </li>
 </template>
 
@@ -9,5 +11,10 @@ export default {
     props: [
         'task'
     ],
+    methods: {
+        remove() {
+            this.$emit('remove', this.task.id);
+        }
+    }
 }
 </script>

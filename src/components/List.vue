@@ -7,6 +7,7 @@
             <ListItem
                 v-for="task in tasks"
                 :task="task"
+                @remove="removeTask"
             />
         </ul>
     </div>
@@ -27,8 +28,16 @@ export default {
     },
     methods: {
         addTask() {
-            this.tasks.push(this.newTask);
+            this.tasks.push({
+                id: this.tasks.length + 1,
+                description: this.newTask,
+                completed: false,
+            });
+
             this.newTask = '';
+        },
+        removeTask(id) {
+            this.tasks = this.tasks.filter(task => task.id !== id);
         },
     },
 }
