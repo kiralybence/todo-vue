@@ -4,12 +4,13 @@
             :style="{
                 'text-decoration': task.completed ? 'line-through' : 'initial',
             }"
+            style="cursor: pointer;"
             @click="toggleComplete"
         >
             {{ task.description }}
         </span>
 
-        <button @click="remove">Remove</button>
+        <button style="margin-left: 10px;" @click="remove">Remove</button>
     </li>
 </template>
 

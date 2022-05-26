@@ -1,7 +1,14 @@
 <template>
     <div>
-        <textarea v-model="newTask"></textarea>
-        <button @click="addTask">Add</button>
+        <div style="margin-bottom: 30px;">
+            <textarea
+                v-model="newTask"
+                style="width: 100%;"
+                rows="8"
+            ></textarea>
+            <br>
+            <button style="padding: 10px 50px;" @click="addTask">Add</button>
+        </div>
 
         <ul>
             <ListItem
