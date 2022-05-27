@@ -15,5 +15,4 @@ import List from './components/List.vue';
 
 <style>
 @import './assets/base.css';
-
 </style>

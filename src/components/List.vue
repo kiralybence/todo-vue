@@ -2,12 +2,17 @@
     <div>
         <div style="margin-bottom: 30px;">
             <textarea
-                v-model="newTask"
-                style="width: 100%;"
+                class="newTaskInput"
                 rows="8"
+                v-model="newTask"
             ></textarea>
+
             <br>
-            <button style="padding: 10px 50px;" @click="addTask">Add</button>
+
+            <button
+                class="addTaskButton"
+                @click="addTask"
+            >Add</button>
         </div>
 
         <ul>

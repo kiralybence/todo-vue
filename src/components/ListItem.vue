@@ -1,16 +1,17 @@
 <template>
     <li>
         <span
-            :style="{
-                'text-decoration': task.completed ? 'line-through' : 'initial',
-            }"
-            style="cursor: pointer;"
+            class="task"
+            :class="{ 'strikethrough': task.completed }"
             @click="toggleComplete"
         >
             {{ task.description }}
         </span>
 
-        <button style="margin-left: 10px;" @click="remove">Remove</button>
+        <button
+            class="removeTaskButton"
+            @click="remove"
+        >Remove</button>
     </li>
 </template>
 
@@ -26,6 +27,6 @@ export default {
         remove() {
             this.$emit('remove', this.task.id);
         },
-    }
+    },
 }
 </script>

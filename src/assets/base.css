@@ -22,3 +22,24 @@ body {
 #title hr {
     margin-bottom: 20px;
 }
+
+.newTaskInput {
+    width: 100%;
+    resize: none;
+}
+
+.addTaskButton {
+    padding: 10px 50px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.task {
+    cursor: pointer;
+}
+
+.removeTaskButton {
+    margin-left: 10px;
+}
