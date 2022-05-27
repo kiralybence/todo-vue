@@ -9,7 +9,7 @@
         </span>
 
         <button
-            class="removeTaskButton"
+            class="remove-task-button"
             @click="remove"
         >Remove</button>
     </li>

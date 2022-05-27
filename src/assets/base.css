@@ -23,16 +23,16 @@ body {
     margin-bottom: 20px;
 }
 
-.newTaskInputContainer {
+.new-task-input-container {
     margin-bottom: 30px;
 }
 
-.newTaskInput {
+.new-task-input {
     width: 100%;
     resize: none;
 }
 
-.addTaskButton {
+.add-task-button {
     padding: 10px 50px;
 }
 
@@ -44,6 +44,6 @@ body {
     cursor: pointer;
 }
 
-.removeTaskButton {
+.remove-task-button {
     margin-left: 10px;
 }

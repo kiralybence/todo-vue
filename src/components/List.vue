@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="newTaskInputContainer">
+        <div class="new-task-input-container">
             <textarea
-                class="newTaskInput"
+                class="new-task-input"
                 rows="8"
                 v-model="newTask"
             ></textarea>
@@ -10,7 +10,7 @@
             <br>
 
             <button
-                class="addTaskButton"
+                class="add-task-button"
                 @click="addTask"
             >Add</button>
         </div>
