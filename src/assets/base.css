@@ -23,6 +23,10 @@ body {
     margin-bottom: 20px;
 }
 
+.newTaskInputContainer {
+    margin-bottom: 30px;
+}
+
 .newTaskInput {
     width: 100%;
     resize: none;

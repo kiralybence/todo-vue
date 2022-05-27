@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div style="margin-bottom: 30px;">
+        <div class="newTaskInputContainer">
             <textarea
                 class="newTaskInput"
                 rows="8"
