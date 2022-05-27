@@ -42,7 +42,7 @@ export default {
     methods: {
         addTask() {
             this.tasks.push({
-                id: this.tasks.length + 1,
+                id: this.tasks.length + 1, // FIXME: this will result in duplicate IDs (find highest ID in array instead, and increment that)
                 description: this.newTask,
                 completed: false,
             });
