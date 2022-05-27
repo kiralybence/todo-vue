@@ -19,8 +19,8 @@
             <ListItem
                 v-for="task in tasks"
                 :task="task"
-                @toggle-complete="toggleTask"
-                @remove="removeTask"
+                @toggle-task="toggleTask"
+                @remove-task="removeTask"
             />
         </ul>
     </div>

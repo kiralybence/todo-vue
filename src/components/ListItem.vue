@@ -3,14 +3,14 @@
         <span
             class="task"
             :class="{ 'strikethrough': task.completed }"
-            @click="toggleComplete"
+            @click="toggleTask"
         >
             {{ task.description }}
         </span>
 
         <button
             class="remove-task-button"
-            @click="remove"
+            @click="removeTask"
         >Remove</button>
     </li>
 </template>
@@ -18,14 +18,14 @@
 <script>
 export default {
     props: [
-        'task'
+        'task',
     ],
     methods: {
-        toggleComplete() {
-            this.$emit('toggleComplete', this.task.id);
+        toggleTask() {
+            this.$emit('toggleTask', this.task.id);
         },
-        remove() {
-            this.$emit('remove', this.task.id);
+        removeTask() {
+            this.$emit('removeTask', this.task.id);
         },
     },
 }
