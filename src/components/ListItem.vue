@@ -2,27 +2,27 @@
     <li>
         <div v-if="!isEditing">
             <span
-                class="task"
-                :class="{ 'strikethrough': task.completed }"
+                class="item"
+                :class="{ 'strikethrough': item.completed }"
                 @click="toggleCompleted"
             >
-                {{ task.description }}
+                {{ item.description }}
             </span>
 
             <button
-                class="task-button"
+                class="item-button"
                 @click="toggleEditor"
             >Edit</button>
 
             <button
-                class="task-button"
-                @click="removeTask"
+                class="item-button"
+                @click="removeItem"
             >Remove</button>
         </div>
 
         <div v-else>
             <ListItemEditor
-                :task="task"
+                :item="item"
                 @edit-saved="toggleEditor"
                 @edit-cancelled="toggleEditor"
             />
@@ -38,10 +38,10 @@ export default {
         ListItemEditor,
     },
     props: [
-        'task',
+        'item',
     ],
     emits: [
-        'removeTask',
+        'removeItem',
     ],
     data() {
         return {
@@ -50,13 +50,13 @@ export default {
     },
     methods: {
         toggleCompleted() {
-            this.task.completed = !this.task.completed;
+            this.item.completed = !this.item.completed;
         },
         toggleEditor() {
             this.isEditing = !this.isEditing;
         },
-        removeTask() {
-            this.$emit('removeTask', this.task.id);
+        removeItem() {
+            this.$emit('removeItem', this.item.id);
         },
     },
 }

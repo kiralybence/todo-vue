@@ -23,16 +23,16 @@ body {
     margin-bottom: 20px;
 }
 
-.new-task-input-container {
+.new-item-input-container {
     margin-bottom: 30px;
 }
 
-.new-task-input {
+.new-item-input {
     width: 100%;
     resize: none;
 }
 
-.add-task-button {
+.add-item-button {
     padding: 10px 50px;
 }
 
@@ -40,10 +40,10 @@ body {
     text-decoration: line-through;
 }
 
-.task {
+.item {
     cursor: pointer;
 }
 
-.task-button {
+.item-button {
     margin-left: 10px;
 }

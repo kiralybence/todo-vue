@@ -2,12 +2,12 @@
     <input type="text" v-model="draft">
 
     <button
-        class="task-button"
+        class="item-button"
         @click="save"
     >Save</button>
 
     <button
-        class="task-button"
+        class="item-button"
         @click="cancel"
     >Cancel</button>
 </template>
@@ -15,7 +15,7 @@
 <script>
 export default {
     props: [
-        'task',
+        'item',
     ],
     emits: [
         'editSaved',
@@ -23,16 +23,16 @@ export default {
     ],
     data() {
         return {
-            draft: this.task.description,
+            draft: this.item.description,
         };
     },
     methods: {
         save() {
-            this.task.description = this.draft;
+            this.item.description = this.draft;
             this.$emit('editSaved');
         },
         cancel() {
-            this.draft = this.task.description;
+            this.draft = this.item.description;
             this.$emit('editCancelled');
         },
     },

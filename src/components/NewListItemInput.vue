@@ -1,7 +1,7 @@
 <template>
-    <div class="new-task-input-container">
+    <div class="new-item-input-container">
         <textarea
-            class="new-task-input"
+            class="new-item-input"
             rows="8"
             v-model="draft"
         ></textarea>
@@ -9,8 +9,8 @@
         <br>
 
         <button
-            class="add-task-button"
-            @click="addTask"
+            class="add-item-button"
+            @click="addItem"
         >Add</button>
     </div>
 </template>
@@ -18,7 +18,7 @@
 <script>
 export default {
     emits: [
-        'addTask',
+        'addItem',
     ],
     data() {
         return {
@@ -26,8 +26,8 @@ export default {
         };
     },
     methods: {
-        addTask() {
-            this.$emit('addTask', this.draft);
+        addItem() {
+            this.$emit('addItem', this.draft);
             this.draft = '';
         },
     },

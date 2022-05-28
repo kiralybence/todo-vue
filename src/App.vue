@@ -6,12 +6,12 @@
         </div>
 
         <NewListItemInput
-            @add-task="addTask"
+            @add-item="addItem"
         />
 
         <List
-            :tasks="tasks"
-            @remove-task="removeTask"
+            :items="items"
+            @remove-item="removeItem"
         />
     </div>
 </template>
@@ -27,28 +27,28 @@ export default {
     },
     data() {
         return {
-            tasks: [],
+            items: [],
         };
     },
     methods: {
         getNewId() {
-            if (!this.tasks.length) {
+            if (!this.items.length) {
                 return 1;
             }
 
-            let prevHighestId = this.tasks.reduce((a, b) => a.id > b.id ? a : b).id;
+            let prevHighestId = this.items.reduce((a, b) => a.id > b.id ? a : b).id;
 
             return prevHighestId + 1;
         },
-        addTask(draft) {
-            this.tasks.push({
+        addItem(draft) {
+            this.items.push({
                 id: this.getNewId(),
                 description: draft,
                 completed: false,
             });
         },
-        removeTask(id) {
-            this.tasks = this.tasks.filter(task => task.id !== id);
+        removeItem(id) {
+            this.items = this.items.filter(item => item.id !== id);
         },
     },
 }

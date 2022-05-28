@@ -1,10 +1,10 @@
 <template>
     <ul>
         <ListItem
-            v-for="task in tasks"
-            :key="task.id"
-            :task="task"
-            @remove-task="removeTask"
+            v-for="item in items"
+            :key="item.id"
+            :item="item"
+            @remove-item="removeItem"
         />
     </ul>
 </template>
@@ -14,17 +14,17 @@ import ListItem from './ListItem.vue';
 
 export default {
     props: [
-        'tasks',
+        'items',
     ],
     emits: [
-        'removeTask',
+        'removeItem',
     ],
     components: {
         ListItem,
     },
     methods: {
-        removeTask(id) {
-            this.$emit('removeTask', id);
+        removeItem(id) {
+            this.$emit('removeItem', id);
         },
     },
 }
