@@ -22,7 +22,7 @@ export default {
     ],
     methods: {
         toggleTask() {
-            this.$emit('toggleTask', this.task.id);
+            this.task.completed = !this.task.completed;
         },
         removeTask() {
             this.$emit('removeTask', this.task.id);

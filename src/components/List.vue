@@ -19,7 +19,6 @@
             <ListItem
                 v-for="task in tasks"
                 :task="task"
-                @toggle-task="toggleTask"
                 @remove-task="removeTask"
             />
         </ul>
@@ -48,15 +47,6 @@ export default {
             });
 
             this.newTask = '';
-        },
-        toggleTask(id) {
-            this.tasks = this.tasks.map(task => {
-                if (task.id === id) {
-                    task.completed = !task.completed;
-                }
-
-                return task;
-            });
         },
         removeTask(id) {
             this.tasks = this.tasks.filter(task => task.id !== id);
