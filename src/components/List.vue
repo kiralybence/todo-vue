@@ -18,6 +18,7 @@
         <ul>
             <ListItem
                 v-for="task in tasks"
+                :key="task.id"
                 :task="task"
                 @remove-task="removeTask"
             />
@@ -39,9 +40,18 @@ export default {
         };
     },
     methods: {
+        getNewId() {
+            if (!this.tasks.length) {
+                return 1;
+            }
+
+            let prevHighestId = this.tasks.reduce((a, b) => a.id > b.id ? a : b).id;
+
+            return prevHighestId + 1;
+        },
         addTask() {
             this.tasks.push({
-                id: this.tasks.length + 1, // FIXME: this will result in duplicate IDs (find highest ID in array instead, and increment that)
+                id: this.getNewId(),
                 description: this.newTask,
                 completed: false,
             });
