@@ -4,7 +4,7 @@
             <span
                 class="task"
                 :class="{ 'strikethrough': task.completed }"
-                @click="toggleTask"
+                @click="toggleCompleted"
             >
                 {{ task.description }}
             </span>
@@ -46,7 +46,7 @@ export default {
         };
     },
     methods: {
-        toggleTask() {
+        toggleCompleted() {
             this.task.completed = !this.task.completed;
         },
         toggleEditor() {
