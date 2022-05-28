@@ -20,13 +20,12 @@
             >Remove</button>
         </div>
 
-        <div v-else>
-            <ListItemEditor
-                :item="item"
-                @edit-saved="toggleEditor"
-                @edit-cancelled="toggleEditor"
-            />
-        </div>
+        <ListItemEditor
+            :item="item"
+            v-else
+            @edit-saved="toggleEditor"
+            @edit-cancelled="toggleEditor"
+        />
     </li>
 </template>
 
