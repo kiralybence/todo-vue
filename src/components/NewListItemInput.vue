@@ -1,7 +1,6 @@
 <template>
-    <div class="new-item-input-container">
+    <div>
         <textarea
-            class="new-item-input"
             rows="8"
             v-model="draft"
         ></textarea>
@@ -9,7 +8,6 @@
         <br>
 
         <button
-            class="add-item-button"
             @click="addItem"
             :disabled="!draft.trim().length"
         >Add</button>
@@ -34,3 +32,14 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    textarea {
+        width: 100%;
+        resize: none;
+    }
+
+    button {
+        padding: 10px 50px;
+    }
+</style>

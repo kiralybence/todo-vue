@@ -1,11 +1,10 @@
 <template>
     <div id="container">
-        <div id="title">
-            <h1>TODO app</h1>
-            <hr>
-        </div>
+        <h1>TODO app</h1>
+        <hr>
 
         <NewListItemInput
+            class="new-list-item-input"
             @add-item="addItem"
         />
 
@@ -56,4 +55,25 @@ export default {
 
 <style>
 @import './assets/base.css';
+</style>
+
+<style scoped>
+    #container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    hr {
+        margin-bottom: 20px;
+    }
+
+    .new-list-item-input {
+        margin-bottom: 30px;
+    }
 </style>

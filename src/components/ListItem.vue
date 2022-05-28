@@ -10,12 +10,10 @@
             </span>
 
             <button
-                class="item-button"
                 @click="toggleEditor"
             >Edit</button>
 
             <button
-                class="item-button"
                 @click="removeItem"
             >Remove</button>
         </div>
@@ -60,3 +58,17 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    .strikethrough {
+        text-decoration: line-through;
+    }
+
+    .item {
+        cursor: pointer;
+    }
+
+    button {
+        margin-left: 10px;
+    }
+</style>
