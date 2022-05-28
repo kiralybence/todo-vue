@@ -1,19 +1,8 @@
 <template>
     <div>
-        <div class="new-task-input-container">
-            <textarea
-                class="new-task-input"
-                rows="8"
-                v-model="newTask"
-            ></textarea>
-
-            <br>
-
-            <button
-                class="add-task-button"
-                @click="addTask"
-            >Add</button>
-        </div>
+        <NewListItemInput
+            @add-task="addTask"
+        />
 
         <ul>
             <ListItem
@@ -27,15 +16,16 @@
 </template>
 
 <script>
+import NewListItemInput from './NewListItemInput.vue';
 import ListItem from './ListItem.vue';
 
 export default {
     components: {
+        NewListItemInput,
         ListItem,
     },
     data() {
         return {
-            newTask: '',
             tasks: [],
         };
     },
@@ -49,14 +39,12 @@ export default {
 
             return prevHighestId + 1;
         },
-        addTask() {
+        addTask(draft) {
             this.tasks.push({
                 id: this.getNewId(),
-                description: this.newTask,
+                description: draft,
                 completed: false,
             });
-
-            this.newTask = '';
         },
         removeTask(id) {
             this.tasks = this.tasks.filter(task => task.id !== id);
