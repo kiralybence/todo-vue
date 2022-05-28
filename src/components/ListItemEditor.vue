@@ -4,6 +4,7 @@
     <button
         class="item-button"
         @click="save"
+        :disabled="!draft.trim().length"
     >Save</button>
 
     <button
@@ -28,7 +29,7 @@ export default {
     },
     methods: {
         save() {
-            this.item.description = this.draft;
+            this.item.description = this.draft.trim();
             this.$emit('editSaved');
         },
         cancel() {

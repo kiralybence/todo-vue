@@ -11,6 +11,7 @@
         <button
             class="add-item-button"
             @click="addItem"
+            :disabled="!draft.trim().length"
         >Add</button>
     </div>
 </template>
@@ -27,7 +28,7 @@ export default {
     },
     methods: {
         addItem() {
-            this.$emit('addItem', this.draft);
+            this.$emit('addItem', this.draft.trim());
             this.draft = '';
         },
     },
