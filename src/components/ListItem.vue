@@ -40,6 +40,9 @@ export default {
     props: [
         'task',
     ],
+    emits: [
+        'removeTask',
+    ],
     data() {
         return {
             isEditing: false,

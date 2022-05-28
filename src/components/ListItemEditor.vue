@@ -17,6 +17,10 @@ export default {
     props: [
         'task',
     ],
+    emits: [
+        'editSaved',
+        'editCancelled',
+    ],
     data() {
         return {
             draft: this.task.description,

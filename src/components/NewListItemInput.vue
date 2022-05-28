@@ -17,6 +17,9 @@
 
 <script>
 export default {
+    emits: [
+        'addTask',
+    ],
     data() {
         return {
             draft: '',

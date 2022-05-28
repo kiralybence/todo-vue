@@ -16,6 +16,9 @@ export default {
     props: [
         'tasks',
     ],
+    emits: [
+        'removeTask',
+    ],
     components: {
         ListItem,
     },
